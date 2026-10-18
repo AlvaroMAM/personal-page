@@ -28,8 +28,12 @@ author:
   Department of Informatics Systems and Telematics Engineering"
   location         : "Extremadura, Spain"
   employer         : "University of Extremadura"
+  department       : "Department of Informatics Systems and Telematics Engineering"
+  research_group   : "Quercus Software Engineering Group"
+  affiliation      : "University of Extremadura · Quercus Software Engineering Group"
   uri              : # URL
   email            : "amapamor@unex.es" 
+  cv_pdf           : # Relative path, for example: "/files/cv.pdf"
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
@@ -166,6 +170,7 @@ exclude:
   - .ruby-version
   - _config.dev.yml
   - docker-compose.yml
+  - docs
   - Gemfile.lock
   - assets/js/_main.js
   - assets/js/plugins
@@ -286,14 +291,14 @@ defaults:
       path: ""
       type: projects
     values:
-      layout: editorial
+      layout: project
       author_profile: false
   # _videos
   - scope:
       path: ""
       type: videos
     values:
-      layout: editorial
+      layout: video
       author_profile: false
 
 

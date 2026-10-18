@@ -24,7 +24,11 @@ My current research focuses on Quantum Software Engineering and on software arch
 
 The [web CV]({{ '/cv/' | relative_url }}) contains the validated information currently available in this repository.
 
+{% if site.author.cv_pdf %}
+[Download the PDF version]({{ site.author.cv_pdf | relative_url }}).
+{% else %}
 <div class="placeholder-block">
   <p class="placeholder-label">Placeholder · File pending</p>
   <p>The downloadable PDF will be added after the definitive CV file has been provided and reviewed.</p>
 </div>
+{% endif %}

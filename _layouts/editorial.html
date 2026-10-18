@@ -2,11 +2,19 @@
 layout: default
 ---
 
+{% assign editorial_kicker = page.kicker %}
+{% assign editorial_intro = page.intro %}
+{% if page.data_source %}
+  {% assign editorial_data = site.data[page.data_source] %}
+  {% assign editorial_kicker = editorial_data.kicker | default: editorial_kicker %}
+  {% assign editorial_intro = editorial_data.intro | default: editorial_intro %}
+{% endif %}
+
 <main class="editorial-page">
   <header class="editorial-page__header">
-    {% if page.kicker %}<p class="section-kicker">{{ page.kicker }}</p>{% endif %}
+    {% if editorial_kicker %}<p class="section-kicker">{{ editorial_kicker }}</p>{% endif %}
     <h1>{{ page.title }}</h1>
-    {% if page.intro %}<p class="editorial-page__intro">{{ page.intro }}</p>{% endif %}
+    {% if editorial_intro %}<p class="editorial-page__intro">{{ editorial_intro }}</p>{% endif %}
   </header>
   <div class="editorial-page__content">
     {{ content }}

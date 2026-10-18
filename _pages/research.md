@@ -2,24 +2,20 @@
 layout: editorial
 body_class: editorial
 title: "Research"
-kicker: "Research focus"
-intro: "Software engineering methods and architectures for dependable systems, with a current emphasis on quantum–classical computing."
+data_source: research
 permalink: /research/
 ---
 
-The following areas are provisional and will be refined before the final release.
+{% assign research = site.data.research %}
 
-## Quantum Software Engineering
+{{ research.note }}
 
-Methods, practices and abstractions for developing, evolving and maintaining quantum software systems.
+{% for area in research.areas %}
+## {{ area.title }}
 
-## Hybrid Quantum–Classical Systems
+{{ area.description }}
 
-Software architectures for integrating quantum resources with classical applications, microservices and cloud infrastructure.
-
-## Deployment & Computing Continuum
-
-Deployment, optimization and orchestration of software across heterogeneous computing environments.
+{% endfor %}
 
 ## Related work
 

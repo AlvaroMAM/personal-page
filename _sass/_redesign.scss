@@ -276,6 +276,23 @@ body.site-body button:focus-visible { outline: 3px solid var(--site-violet); out
 .video-placeholder h3 { font-size: 1.55rem; margin: 1.2rem 0 .4rem; }
 .video-placeholder p { color: var(--site-muted); }
 
+.video-embed {
+  background: var(--site-ink);
+  margin: 0 0 2rem;
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+  width: 100%;
+}
+
+.video-embed iframe {
+  border: 0;
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  width: 100%;
+}
+
 .about-home { background: var(--site-soft-teal); border-top: 1px solid var(--site-rule); padding: clamp(3.5rem, 7vw, 5.5rem) 1.5rem; }
 .about-home__inner { align-items: center; display: grid; gap: clamp(2rem, 5vw, 5rem); grid-template-columns: 10rem 1fr auto; margin: 0 auto; max-width: var(--site-content); }
 .about-home__photo { border-radius: 50%; height: 9rem; object-fit: cover; width: 9rem; }

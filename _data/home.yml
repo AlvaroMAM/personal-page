@@ -1,0 +1,30 @@
+eyebrow: "Software engineering · Emerging technologies"
+headline: "Engineering the future of software systems."
+subtitle: "Exploring software engineering, quantum–classical computing, and emerging technologies through research and science communication."
+
+systems_map:
+  label: "Software systems map"
+  caption: "Connecting rigorous research with useful explanations and real software systems."
+  nodes:
+    - key: "research"
+      label: "Research"
+    - key: "engineering"
+      label: "Engineering"
+    - key: "communication"
+      label: "Communication"
+
+facets:
+  - kicker: "Academic research"
+    title: "Ideas grounded in software engineering."
+    description: "Research on quantum software engineering, hybrid quantum–classical systems and the deployment of software across heterogeneous computing environments."
+    url: "/research/"
+    link_label: "Explore research areas →"
+  - kicker: "Science communication"
+    title: "Complex technology, made approachable."
+    description: "Articles and videos will connect research, conferences and emerging technologies with a wider technical audience in English and Spanish."
+    url: "/blog/"
+    link_label: "Visit the editorial space →"
+
+blog_heading: "Ideas, explained."
+videos_heading: "Research in context."
+about_heading: "Research, engineering and scientific communication."

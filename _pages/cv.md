@@ -8,6 +8,10 @@ redirect_from:
   - /resume
 ---
 
+{% if site.author.cv_pdf %}
+[Download the PDF version]({{ site.author.cv_pdf | relative_url }}).
+{% endif %}
+
 <div class="placeholder-block">
   <p class="placeholder-label">Placeholder · Validation pending</p>
   <p>Education, employment, skills and the downloadable PDF have intentionally not been populated because the repository currently contains demonstration CV data rather than validated personal information.</p>

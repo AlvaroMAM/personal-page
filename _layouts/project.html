@@ -1,0 +1,25 @@
+---
+layout: editorial
+---
+
+{% if page.status or page.role %}
+<p class="content-meta">
+  {% if page.status %}{{ page.status }}{% endif %}
+  {% if page.status and page.role %} · {% endif %}
+  {% if page.role %}{{ page.role }}{% endif %}
+</p>
+{% endif %}
+
+{% if page.collaborators %}
+<p><strong>Collaborators:</strong> {{ page.collaborators | join: ", " }}</p>
+{% endif %}
+
+{% if page.repository or page.website %}
+<p>
+  {% if page.repository %}<a href="{{ page.repository }}">Source code</a>{% endif %}
+  {% if page.repository and page.website %} · {% endif %}
+  {% if page.website %}<a href="{{ page.website }}">Project website</a>{% endif %}
+</p>
+{% endif %}
+
+{{ content }}
