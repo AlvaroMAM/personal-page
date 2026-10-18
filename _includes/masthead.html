@@ -1,23 +1,26 @@
-{% include base_path %}
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} — Home">
+      <span class="site-brand__mark" aria-hidden="true">AM</span>
+      <span class="site-brand__copy">
+        <strong>{{ site.title }}</strong>
+        <span>Software engineering researcher</span>
+      </span>
+    </a>
 
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button><div class="navicon"></div></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-              {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
-    </div>
+    <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span>Menu</span>
+      <span class="site-nav__toggle-lines" aria-hidden="true"></span>
+    </button>
+
+    <nav id="primary-navigation" class="site-nav" aria-label="Primary navigation">
+      <ul class="site-nav__links">
+        {% for link in site.data.navigation.main %}
+          <li><a href="{{ link.url | relative_url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+      {% assign cta = site.data.navigation.cta %}
+      <a class="site-nav__cta" href="{{ cta.url | relative_url }}"{% if page.url == cta.url %} aria-current="page"{% endif %}>{{ cta.title }} <span aria-hidden="true">↗</span></a>
+    </nav>
   </div>
-</div>
+</header>

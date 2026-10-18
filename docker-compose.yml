@@ -1,0 +1,21 @@
+services:
+  site:
+    image: ruby:3.1-bookworm
+    working_dir: /site
+    command: >-
+      sh -lc "bundle install && bundle exec jekyll serve
+      --config _config.yml,_config.dev.yml
+      --host 0.0.0.0
+      --livereload
+      --force_polling"
+    environment:
+      JEKYLL_ENV: development
+    ports:
+      - "4000:4000"
+      - "35729:35729"
+    volumes:
+      - .:/site
+      - bundle_cache:/usr/local/bundle
+
+volumes:
+  bundle_cache:

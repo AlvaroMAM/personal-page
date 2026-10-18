@@ -7,14 +7,14 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "es-ES"
+locale                   : "en-GB"
 title                    : "Álvaro M. Aparicio-Morales"
 title_separator          : "-"
 name                     : &name "Álvaro Manuel Aparicio Morales"
-description              : &description "Researcher at UEX in Quercus-SEG"
+description              : &description "Software engineering researcher exploring quantum-classical computing and emerging technologies"
 url                      : https://alvaromam.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/personal-page" # the subpath of your site, e.g. "/blog"
-repository               : "https://github.com/AlvaroMAM"
+repository               : "AlvaroMAM/personal-page"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -26,7 +26,7 @@ author:
   pronouns         : # example: "she/her"  
   bio              : "Researcher at University of Extremadura in Quercus Software Engineering Group. 
   Department of Informatics Systems and Telematics Engineering"
-  location         : "Earth"
+  location         : "Extremadura, Spain"
   employer         : "University of Extremadura"
   uri              : # URL
   email            : "amapamor@unex.es" 
@@ -43,7 +43,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : # Username
+  github           : "AlvaroMAM"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
@@ -160,7 +160,13 @@ exclude:
   - Gruntfile.js
   - LICENSE
   - README
+  - README.md
   - Rakefile
+  - .github
+  - .ruby-version
+  - _config.dev.yml
+  - docker-compose.yml
+  - Gemfile.lock
   - assets/js/_main.js
   - assets/js/plugins
   - assets/js/vendor
@@ -212,6 +218,12 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  projects:
+    output: true
+    permalink: /projects/:path/
+  videos:
+    output: true
+    permalink: /videos/:path/
 
 
 # Defaults
@@ -269,6 +281,20 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # _projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: editorial
+      author_profile: false
+  # _videos
+  - scope:
+      path: ""
+      type: videos
+    values:
+      layout: editorial
+      author_profile: false
 
 
 # Sass/SCSS
@@ -281,7 +307,7 @@ sass:
 permalink: /:categories/:title/
 # paginate: 5 # amount of posts to show
 # paginate_path: /page:num/
-timezone: America/Los_Angeles # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Europe/Madrid # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins

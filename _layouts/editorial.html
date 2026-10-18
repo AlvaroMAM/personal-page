@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<main class="editorial-page">
+  <header class="editorial-page__header">
+    {% if page.kicker %}<p class="section-kicker">{{ page.kicker }}</p>{% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.intro %}<p class="editorial-page__intro">{{ page.intro }}</p>{% endif %}
+  </header>
+  <div class="editorial-page__content">
+    {{ content }}
+  </div>
+</main>

@@ -1,0 +1,129 @@
+---
+layout: default
+---
+
+{% assign sorted_publications = site.publications | sort: "date" | reverse %}
+{% assign featured_work = sorted_publications | first %}
+
+<main class="home-redesign">
+  <section class="home-hero" aria-labelledby="home-title">
+    <div>
+      <p class="section-kicker">Software engineering · Emerging technologies</p>
+      <h1 id="home-title" class="home-hero__title">Engineering the future of software systems.</h1>
+      <p class="home-hero__lead">Exploring software engineering, quantum–classical computing, and emerging technologies through research and science communication.</p>
+      <div class="home-hero__actions">
+        <a class="button-link button-link--primary" href="{{ '/research/' | relative_url }}">Explore my research</a>
+        <a class="button-link" href="{{ '/publications/' | relative_url }}">View publications</a>
+      </div>
+      <p class="home-hero__affiliation">University of Extremadura · Quercus Software Engineering Group</p>
+    </div>
+
+    <div class="systems-map" aria-label="A conceptual map connecting research, engineering and science communication">
+      <p class="content-meta">Software systems map</p>
+      <span class="systems-map__line systems-map__line--one" aria-hidden="true"></span>
+      <span class="systems-map__line systems-map__line--two" aria-hidden="true"></span>
+      <span class="systems-map__node systems-map__node--research">Research</span>
+      <span class="systems-map__node systems-map__node--engineering">Engineering</span>
+      <span class="systems-map__node systems-map__node--communication">Communication</span>
+      <p class="systems-map__caption">Connecting rigorous research with useful explanations and real software systems.</p>
+    </div>
+  </section>
+
+  <section class="home-pillars" aria-label="Academic and communication profiles">
+    <article class="home-pillar">
+      <p class="section-kicker">Academic research</p>
+      <h2>Ideas grounded in software engineering.</h2>
+      <p>Research on quantum software engineering, hybrid quantum–classical systems and the deployment of software across heterogeneous computing environments.</p>
+      <a class="text-link" href="{{ '/research/' | relative_url }}">Explore research areas →</a>
+    </article>
+    <article class="home-pillar">
+      <p class="section-kicker">Science communication</p>
+      <h2>Complex technology, made approachable.</h2>
+      <p>Articles and videos will connect research, conferences and emerging technologies with a wider technical audience in English and Spanish.</p>
+      <a class="text-link" href="{{ '/blog/' | relative_url }}">Visit the editorial space →</a>
+    </article>
+  </section>
+
+  <section class="home-section" aria-labelledby="research-focus-title">
+    <div class="home-section__inner">
+      <header class="section-heading">
+        <div>
+          <p class="section-kicker">01 · Research focus</p>
+          <h2 id="research-focus-title">Building dependable systems for new computing realities.</h2>
+        </div>
+        <a class="text-link" href="{{ '/research/' | relative_url }}">All research areas →</a>
+      </header>
+      <div class="research-grid">
+        <article class="research-card" id="quantum-software-engineering">
+          <p class="content-meta">Provisional area A</p>
+          <h3>Quantum Software Engineering</h3>
+          <p>Methods, practices and abstractions for developing maintainable quantum software.</p>
+        </article>
+        <article class="research-card" id="hybrid-systems">
+          <p class="content-meta">Provisional area B</p>
+          <h3>Hybrid Quantum–Classical Systems</h3>
+          <p>Architectures that coordinate quantum resources with classical and cloud infrastructure.</p>
+        </article>
+        <article class="research-card" id="deployment-continuum">
+          <p class="content-meta">Provisional area C</p>
+          <h3>Deployment &amp; Computing Continuum</h3>
+          <p>Deployment, optimization and orchestration across heterogeneous computing environments.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {% if featured_work %}
+  <section class="featured-work" aria-labelledby="featured-work-title">
+    <div>
+      <p class="section-kicker">02 · Featured work</p>
+      <p class="featured-work__intro">The most recent publication currently available in the academic collection.</p>
+    </div>
+    <div>
+      <h2 id="featured-work-title">{{ featured_work.title }}</h2>
+      <p class="featured-work__meta">{{ featured_work.venue }} · {{ featured_work.date | date: "%Y" }}</p>
+      <a class="text-link" href="{{ featured_work.url | relative_url }}">Read publication details →</a>
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="home-section" aria-label="Writing and video">
+    <div class="home-section__inner media-grid">
+      <div class="media-column">
+        <header class="media-column__header">
+          <div><p class="section-kicker">03 · Blog &amp; outreach</p><h2>Ideas, explained.</h2></div>
+          <a class="text-link" href="{{ '/blog/' | relative_url }}">Blog →</a>
+        </header>
+        <article class="editorial-placeholder">
+          <p class="placeholder-label">Placeholder · Content pending</p>
+          <h3>The first research and outreach articles will appear here.</h3>
+          <p>Posts will be written in English or Spanish and labelled with their language.</p>
+        </article>
+      </div>
+
+      <div class="media-column">
+        <header class="media-column__header">
+          <div><p class="section-kicker">04 · Videos</p><h2>Research in context.</h2></div>
+          <a class="text-link" href="{{ '/videos/' | relative_url }}">Videos →</a>
+        </header>
+        <article class="video-placeholder">
+          <div class="video-placeholder__frame"><span class="video-placeholder__play" aria-hidden="true">▶</span></div>
+          <h3>YouTube collection in preparation</h3>
+          <p class="placeholder-label">Placeholder · No video attributed</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-home" aria-labelledby="about-home-title">
+    <div class="about-home__inner">
+      <img class="about-home__photo" src="{{ '/images/personal_profile.png' | relative_url }}" alt="Portrait of {{ site.author.name }}">
+      <div>
+        <p class="section-kicker">05 · About me</p>
+        <h2 id="about-home-title">Research, engineering and scientific communication.</h2>
+        <div class="about-home__copy">{{ content }}</div>
+      </div>
+      <a class="button-link" href="{{ '/about/' | relative_url }}">About &amp; CV</a>
+    </div>
+  </section>
+</main>

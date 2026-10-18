@@ -18,14 +18,25 @@ Academic Pages is a Github Pages template for academic websites.
 
 See more info at https://academicpages.github.io/
 
-## Running Locally
+## Local preview
 
-When you are initially working your website, it is very useful to be able to preview the changes locally before pushing them to GitHub. To work locally you will need to:
+### Docker (recommended on Windows)
 
-1. Clone the repository and made updates as detailed above.
-1. Make sure you have ruby-dev, bundler, and nodejs installed: `sudo apt install ruby-dev ruby-bundler nodejs`
-1. Run `bundle install` to install ruby dependencies. If you get errors, delete Gemfile.lock and try again.
-1. Run `jekyll serve -l -H localhost` to generate the HTML and serve it from `localhost:4000` the local server will automatically rebuild and refresh the pages on change.
+The redesign branch includes a reproducible Docker Compose environment, so Ruby does not need to be installed directly on the computer.
+
+1. Start Docker Desktop.
+2. Run `docker compose up` from the repository root.
+3. Open `http://localhost:4000/personal-page/`.
+4. Stop the preview with `Ctrl+C`.
+
+The first start downloads the Ruby image and installs the locked gems. Later starts reuse the named Bundler cache. This workflow builds locally only and does not deploy the public GitHub Pages site.
+
+### Native Ruby (optional)
+
+1. Install Ruby 3.1 and Bundler.
+2. Run `bundle install`.
+3. Run `bundle exec jekyll serve --config _config.yml,_config.dev.yml --livereload`.
+4. Open `http://localhost:4000/personal-page/`.
 
 
 # Maintenance 
