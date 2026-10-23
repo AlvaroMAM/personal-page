@@ -1,12 +1,43 @@
 ---
-layout: archive
+layout: editorial
+body_class: editorial
 title: "Teaching"
+kicker: "Academic experience"
+intro: "University courses and teaching presented from the most recent academic year to the oldest."
 permalink: /teaching/
-author_profile: true
+author_profile: false
 ---
 
-{% include base_path %}
-
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+{% assign teaching_entries = site.teaching | where: "teaching_section", true | sort: "registry_order" | reverse %}
+{% assign current_year = "" %}
+{% for teaching in teaching_entries %}
+{% if teaching.academic_year != current_year %}
+{% unless forloop.first %}</div></section>{% endunless %}
+<section class="academic-year" aria-labelledby="teaching-{{ teaching.academic_year }}">
+<h2 id="teaching-{{ teaching.academic_year }}" class="academic-year__heading">{{ teaching.academic_year }}</h2>
+<div class="academic-list">
+{% assign current_year = teaching.academic_year %}
+{% endif %}
+<article class="academic-entry">
+<h3><a href="{{ teaching.url | relative_url }}">{{ teaching.title }}</a></h3>
+<p class="academic-entry__context">{{ teaching.venue }}</p>
+{% if teaching.degrees or teaching.degree or teaching.subject_type %}
+<dl class="academic-entry__facts">
+{% if teaching.degrees %}
+<div>
+<dt>Degrees</dt>
+<dd>
+<ul class="academic-entry__degree-list">
+{% for degree in teaching.degrees %}<li>{{ degree }}</li>{% endfor %}
+</ul>
+</dd>
+</div>
+{% elsif teaching.degree %}
+<div><dt>Degree</dt><dd>{{ teaching.degree }}</dd></div>
+{% endif %}
+{% if teaching.subject_type %}<div><dt>Subject type</dt><dd>{{ teaching.subject_type }}</dd></div>{% endif %}
+</dl>
+{% endif %}
+</article>
+{% if forloop.last %}</div></section>{% endif %}
 {% endfor %}

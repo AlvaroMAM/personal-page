@@ -311,6 +311,61 @@ body.site-body button:focus-visible { outline: 3px solid var(--site-violet); out
 .placeholder-block { background: var(--site-surface); border: 1px solid var(--site-rule); margin: 1.5rem 0; padding: 1.4rem; }
 .placeholder-block p:last-child { margin-bottom: 0; }
 
+.academic-index__external {
+  border-bottom: 1px solid var(--site-rule);
+  color: var(--site-muted);
+  margin: 0 0 2.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.academic-year {
+  border-top: 1px solid var(--site-ink);
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(5rem, .28fr) 1fr;
+  padding: 1.2rem 0 3.5rem;
+}
+
+.academic-year__heading {
+  border: 0 !important;
+  font-family: "IBM Plex Mono", monospace !important;
+  font-size: 1rem !important;
+  letter-spacing: .06em;
+  margin: 0 !important;
+  padding: .3rem 0 0 !important;
+}
+
+.academic-list { display: grid; gap: 0; }
+.academic-list--standalone { border-top: 1px solid var(--site-ink); }
+
+.academic-entry {
+  border-bottom: 1px solid var(--site-rule);
+  padding: .25rem 0 1.8rem;
+}
+
+.academic-entry + .academic-entry { padding-top: 1.8rem; }
+.academic-entry:last-child { border-bottom: 0; }
+.academic-entry h2,
+.academic-entry h3 {
+  border: 0 !important;
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem) !important;
+  line-height: 1.15;
+  margin: .55rem 0 .6rem !important;
+  padding: 0 !important;
+}
+.academic-entry h2 a,
+.academic-entry h3 a { color: var(--site-ink); text-decoration-thickness: 1px; text-underline-offset: .25rem; }
+.academic-entry__context { color: var(--site-muted); margin: 0 0 .8rem; }
+.academic-entry__note { color: var(--site-violet); font-size: .9rem; margin: .45rem 0 .8rem; }
+.academic-entry__pending { color: var(--site-muted); display: inline-block; font: 500 .76rem "IBM Plex Mono", monospace; letter-spacing: .04em; text-transform: uppercase; }
+.academic-entry__facts { display: flex; flex-wrap: wrap; gap: .75rem 2rem; margin: .85rem 0 0; }
+.academic-entry__facts div { display: grid; gap: .1rem; }
+.academic-entry__facts dt { color: var(--site-muted); font: 500 .68rem "IBM Plex Mono", monospace; letter-spacing: .06em; text-transform: uppercase; }
+.academic-entry__facts dd { margin: 0; }
+.academic-entry__degree-list { margin: 0; padding-left: 1.15rem; }
+.academic-entry__degree-list li + li { margin-top: .25rem; }
+.academic-entry--stay { padding: 1.8rem 0; }
+
 body.page--archive #main,
 body.page--single #main,
 body.page--talk #main { max-width: var(--site-content); padding-left: 1.5rem; padding-right: 1.5rem; }
@@ -370,6 +425,9 @@ body.page--single .page__title { font-size: clamp(2.8rem, 6vw, 5rem); }
   .about-home { padding: 3.5rem 1.25rem; }
   .about-home .button-link { grid-column: auto; justify-self: stretch; }
   .editorial-page { padding: 3.5rem 1.25rem; }
+  .academic-year { grid-template-columns: 1fr; gap: 1rem; padding-bottom: 2.5rem; }
+  .academic-year__heading { position: sticky; top: 4.5rem; background: var(--site-paper); padding: .6rem 0 !important; z-index: 1; }
+  .academic-entry__facts { display: grid; grid-template-columns: 1fr 1fr; }
   .site-footer__top,
   .site-footer__bottom { align-items: start; flex-direction: column; }
 }

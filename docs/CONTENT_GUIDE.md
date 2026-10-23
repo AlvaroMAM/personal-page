@@ -12,6 +12,8 @@ Esta guía explica cómo mantener la web sin modificar layouts HTML ni estilos C
 | Nombre, fotografía, afiliación, correo y perfiles | `_config.yml`, sección `author` |
 | Líneas de investigación | `_data/research.yml` |
 | Publicaciones | `_publications/` |
+| Docencia | `_teaching/` |
+| Estancias de investigación | `_stays/` |
 | Proyectos y software | `_projects/` |
 | Congresos, charlas y entrevistas | `_talks/` |
 | Artículos del blog | `_posts/` |
@@ -26,7 +28,7 @@ No es necesario editar `_layouts/`, `_includes/`, `_sass/` ni `assets/css/` para
 Desde la raíz del repositorio:
 
 ```powershell
-git switch codex/redesign-v1
+git switch codex/content-registro-logros
 docker compose up
 ```
 
@@ -133,8 +135,12 @@ title: "REEMPLAZAR_TITULO"
 collection: publications
 permalink: /publication/2026-10-18-titulo-breve
 date: 2026-10-18
+publication_year: 2026
+publication_type: "Journal article"
+registry_order: 20
 venue: "REEMPLAZAR_REVISTA_O_CONGRESO"
 paperurl: "https://REEMPLAZAR_URL_DEL_ARTICULO"
+publication_status: "Pending publication"
 citation: "REEMPLAZAR_CITA_COMPLETA"
 excerpt: "REEMPLAZAR_RESUMEN_BREVE"
 ---
@@ -143,6 +149,56 @@ REEMPLAZAR_RESUMEN_O_INFORMACION_ADICIONAL_EN_MARKDOWN
 ```
 
 La publicación más reciente por fecha aparece automáticamente como *Featured Work* en la portada. La lista completa se genera en `/publications/`.
+
+`publication_year` controla el año bajo el que aparece la publicación. `registry_order` debe seguir el número de fila de la hoja de registro; la web lo muestra de mayor a menor para presentar primero las publicaciones más recientes. Usa `publication_type: "Journal article"` o `publication_type: "Conference paper"`. Si la publicación todavía no tiene URL, omite `paperurl` y usa `publication_status: "Pending publication"`. Si solo conoces el año, puedes usar el 1 de enero en `date` y conservar el año real en `publication_year`. No cambies los `permalink` de publicaciones ya publicadas.
+
+## Docencia
+
+Crea un archivo Markdown por asignatura o actividad en `_teaching/`. El listado `/teaching/` muestra únicamente las entradas verificadas que incluyen `source: "registro_logros"` y las agrupa por curso académico:
+
+```markdown
+---
+title: "REEMPLAZAR_ASIGNATURA"
+collection: teaching
+permalink: /teaching/2026-2027-asignatura
+date: 2026-09-01
+academic_year: "2026-2027"
+venue: "REEMPLAZAR_UNIVERSIDAD"
+degrees:
+  - "REEMPLAZAR_GRADO_1"
+  - "REEMPLAZAR_GRADO_2"
+source: "registro_logros"
+registry_order: 8
+teaching_section: true
+---
+
+REEMPLAZAR_INFORMACION_ADICIONAL_OPCIONAL.
+```
+
+Usa `degree` cuando la asignatura pertenezca a una sola titulación y `degrees` cuando pertenezca a varias. Para una optativa puedes añadir `subject_type: "Elective"`. En los cursos de extensión o formación, omite `degree` y `degrees`: la página no mostrará ningún campo de titulación o programa. Mantén `registry_order` con el número de fila de la hoja de docencia; la web lo invierte automáticamente para mostrar primero el curso más reciente. Solo aparecen las entradas con `teaching_section: true`, por lo que los TFG pueden conservarse en la colección sin mostrarse en esta página.
+
+## Estancias de investigación
+
+Crea un archivo por estancia en `_stays/`:
+
+```markdown
+---
+title: "Research stay at REEMPLAZAR_INSTITUCION (2027)"
+collection: stays
+permalink: /stays/2027-institucion
+date: 2027-01-01
+year: 2027
+duration_months: 3
+location: "REEMPLAZAR_CIUDAD"
+institution: "REEMPLAZAR_INSTITUCION"
+host: "REEMPLAZAR_PERSONA_RESPONSABLE"
+source: "registro_logros"
+---
+
+REEMPLAZAR_INFORMACION_ADICIONAL_OPCIONAL.
+```
+
+La página `/stays/` ordena automáticamente las estancias por año, de la más reciente a la más antigua.
 
 ## Proyectos de investigación y software
 

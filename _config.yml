@@ -217,6 +217,9 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
+  stays:
+    output: true
+    permalink: /stays/:path/
   portfolio:
     output: true
     permalink: /:collection/:path/
@@ -269,6 +272,15 @@ defaults:
       author_profile: true
       share: true
       comments: true
+  # _stays
+  - scope:
+      path: ""
+      type: stays
+    values:
+      layout: single
+      author_profile: true
+      share: false
+      comments: false
   # _portfolio
   - scope:
       path: ""
