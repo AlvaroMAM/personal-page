@@ -98,6 +98,7 @@ author:
   research_group: "REEMPLAZAR_GRUPO"
   affiliation: "REEMPLAZAR_AFILIACION_VISIBLE_EN_PORTADA"
   email: "REEMPLAZAR_CORREO"
+  email_secondary: "REEMPLAZAR_SEGUNDO_CORREO_OPCIONAL"
 ```
 
 La propiedad `avatar` solo contiene el nombre del archivo, no `images/`. La misma fotografía se reutiliza automáticamente en la portada y en los componentes académicos heredados.

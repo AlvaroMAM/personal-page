@@ -24,15 +24,15 @@ author:
   avatar           : "personal_profile.png"
   name             : "Álvaro M. Aparicio-Morales"
   pronouns         : # example: "she/her"  
-  bio              : "Researcher at University of Extremadura in Quercus Software Engineering Group. 
-  Department of Informatics Systems and Telematics Engineering"
-  location         : "Extremadura, Spain"
-  employer         : "University of Extremadura"
+  bio              : "PhD student at the University of Extremadura and researcher at the University of Málaga."
+  location         : "Spain"
+  employer         : "University of Málaga"
   department       : "Department of Informatics Systems and Telematics Engineering"
   research_group   : "Quercus Software Engineering Group"
-  affiliation      : "University of Extremadura · Quercus Software Engineering Group"
+  affiliation      : "PhD student · University of Extremadura · Researcher · University of Málaga"
   uri              : # URL
-  email            : "amapamor@unex.es" 
+  email            : "alvaroapamor@uma.es"
+  email_secondary  : "amapamor@uma.es"
   cv_pdf           : # Relative path, for example: "/files/cv.pdf"
 
   # Academic websites

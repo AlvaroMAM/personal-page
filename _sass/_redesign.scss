@@ -379,6 +379,7 @@ body.page--single .page__title { font-size: clamp(2.8rem, 6vw, 5rem); }
 .site-footer__top { align-items: end; border-bottom: 1px solid #39454d; display: flex; gap: 2rem; justify-content: space-between; padding-bottom: 3rem; }
 .site-footer__eyebrow { color: #70d4dc; font: 500 .72rem "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
 .site-footer__statement { font: 600 clamp(2rem, 4vw, 3.5rem)/1 "Newsreader", Georgia, serif; margin: 0; max-width: 15ch; }
+.site-footer__emails { align-items: flex-end; display: flex; flex-direction: column; gap: .4rem; }
 .site-footer__email { color: var(--site-paper) !important; font-size: 1.05rem; }
 .site-footer__bottom { align-items: center; display: flex; gap: 2rem; justify-content: space-between; padding-top: 1.7rem; }
 .site-footer__bottom p { color: #b9c5c9; font-size: .78rem; margin: 0; }
@@ -430,6 +431,7 @@ body.page--single .page__title { font-size: clamp(2.8rem, 6vw, 5rem); }
   .academic-entry__facts { display: grid; grid-template-columns: 1fr 1fr; }
   .site-footer__top,
   .site-footer__bottom { align-items: start; flex-direction: column; }
+  .site-footer__emails { align-items: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {

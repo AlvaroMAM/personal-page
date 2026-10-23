@@ -3,13 +3,13 @@ layout: editorial
 body_class: editorial
 title: "About"
 kicker: "Profile"
-intro: "Software engineering researcher interested in quantum–classical computing, emerging technologies and scientific communication."
+intro: "PhD student at the University of Extremadura and researcher at the University of Málaga, working on software engineering and quantum–classical computing."
 permalink: /about/
 redirect_from:
   - /about.html
 ---
 
-I am a researcher at the University of Extremadura and a member of the Quercus Software Engineering Group, within the Department of Computer Systems and Telematics Engineering.
+I am a PhD student at the University of Extremadura, where I am a member of the Quercus Software Engineering Group, and I currently work as a researcher at the University of Málaga.
 
 My current research focuses on Quantum Software Engineering and on software architectures for integrating quantum computing resources with classical and cloud systems.
 

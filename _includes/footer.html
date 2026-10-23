@@ -3,7 +3,10 @@
     <p class="site-footer__eyebrow">Research · Engineering · Communication</p>
     <p class="site-footer__statement">Engineering the future of software systems.</p>
   </div>
-  <a class="site-footer__email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+  <div class="site-footer__emails" aria-label="Email addresses">
+    <a class="site-footer__email" href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+    {% if site.author.email_secondary %}<a class="site-footer__email" href="mailto:{{ site.author.email_secondary }}">{{ site.author.email_secondary }}</a>{% endif %}
+  </div>
 </div>
 
 <div class="site-footer__bottom">
